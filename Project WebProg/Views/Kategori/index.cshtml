@@ -1,0 +1,50 @@
+﻿@model List<Project_WebProg.Models.KategoriModel>
+
+@{
+    ViewBag.Title = "index";
+}
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+
+}
+<div>
+    <br />
+    <br />
+    <a href="/Kategori/tambah"><button type="button" class="btn btn-primary" ; style="margin-right: 8px">Tambah</button></a>
+    <a href="/Kategori/Edit"><button type="button" class="btn btn-primary" ; style="margin-right: 8px">Ubah</button></a>
+    <a href="/Kategori/Delete"><button type="button" class="btn btn-primary">Hapus</button></a>
+    <br />
+    <br />
+    <table class="table table-striped">
+        <thead class="bg-primary">
+
+            <tr>
+                <th>Id Kategori</th>
+                <th>Nama Kategori</th>
+                <th>Keterangan</th>
+            </tr>
+
+        </thead>
+
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@Model[i].IdKategori</td>
+                <td>@Model[i].NamaKategori</td>
+                <td>@Model[i].Keterangan</td>
+            </tr>
+        }
+    </table>
+
+
+</div>
+
+
+

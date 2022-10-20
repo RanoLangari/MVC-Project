@@ -1,0 +1,59 @@
+﻿@model List<Project_WebProg.Models.BarangModel>
+@{
+    ViewBag.Title = "index";
+}
+
+@if (ViewBag.Message != null)
+{
+<script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+</script>
+
+}
+@if (ViewBag.Tambah == true)
+{
+    ViewBag.Message = string.Format("Kode Barang telah Ditambahkan");
+}
+
+<br />
+<br />
+<div>
+
+    <a href="/barang/tambah"><button type="button" class="btn btn-success" ; style="margin-right: 8px">Tambah</button></a>
+    <a href="/barang/edit"><button type="button" class="btn btn-success" ; style="margin-right: 8px">Ubah</button></a>
+    <a href="/barang/delete"><button type="button" class="btn btn-success">Hapus</button></a>
+
+</div>
+<br />
+<div>
+    <table class="table table-striped">
+        <thead class="bg-primary">
+
+            <tr>
+                <th>KodeBarang</th>
+                <th>NamaBarang</th>
+                <th>Jumlah</th>
+                <th>Keterangan</th>
+            </tr>
+
+        </thead>
+
+
+        @for (int i = 0;  i < Model.Count; i++)
+        {
+            <tr style="color : black">
+                <td>@Model[i].KodeBarang</td>
+                <td>@Model[i].NamaBarang</td>
+                <td>@Model[i].Jumlah</td>
+                <td>@Model[i].Keterangan</td>
+            </tr>
+        }
+
+
+
+    </table>
+</div>
+
