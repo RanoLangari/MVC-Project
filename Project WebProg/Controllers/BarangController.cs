@@ -51,11 +51,11 @@ namespace Project_WebProg.Controllers
                 return View();
             }
             //jika kode barang huruf
-            else if (barang.KodeBarang.Any(char.IsLetter))
-            {
-                ViewBag.Message = string.Format("Kode Barang harus angka");
-                return View();
-            }
+            //else if (barang.KodeBarang.Any(char.IsLetter))
+            //{
+            //    ViewBag.Message = string.Format("Kode Barang harus angka");
+            //    return View();
+            //}
             //jika kode barang sudah ada
             else if (listBarang.Any(x => x.KodeBarang == barang.KodeBarang))
             {
